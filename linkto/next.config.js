@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-
 const nextConfig = {
-  output: 'export',
-  basePath: isGitHubPages
-    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] || ''}`
+  output: 'export',            // enables static export with next build
+  trailingSlash: true,         // helps with GitHub Pages routing
+  basePath: process.env.GITHUB_PAGES === 'true' 
+    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1]}`  // repo name as base path
     : '',
-  trailingSlash: true,
 };
 
 module.exports = nextConfig;
