@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig = {
-  output: 'export', // Required for static HTML export in Next.js 13+
-    basePath: '/LinkTo', // ⚠️ replace with your GitHub repo name
+  output: 'export',
+  basePath: isGitHubPages
+    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] || ''}`
+    : '',
   trailingSlash: true,
 };
+
 module.exports = nextConfig;
