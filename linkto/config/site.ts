@@ -11,7 +11,7 @@ export const siteConfig = {
     },
     linkedin: {
       title: "LinkedIn",
-      href: "in/david-waligora-244896182",
+      href: "https://www.linkedin.com/in/david-waligora-244896182/",
     },
     website: {
       title: "Website",
