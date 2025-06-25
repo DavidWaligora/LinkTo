@@ -21,6 +21,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -30,17 +38,18 @@ jobs:
         working-directory: ./linkto
         run: npm ci
 
-      - name: Build and export
+      - name: Build static export
         working-directory: ./linkto
-        run: |
-          npm run build
-          npm run export
+        env:
+          GITHUB_PAGES: 'true'
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: linkto/out
-
+          path: ./out
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
