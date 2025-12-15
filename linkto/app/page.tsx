@@ -20,7 +20,7 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-3">
             <div className="col-span-1 h-full relative bg-default-100 rounded-xl overflow-hidden">
               <Image
-                src="/IMG_3285.PNG"
+                src="IMG_3285.PNG"
                 alt="Image of David Waligora"
                 fill
                 className="object-cover"
