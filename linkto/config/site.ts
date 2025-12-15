@@ -19,7 +19,7 @@ export const siteConfig = {
     },
     mail: {
       title: "Mail",
-      href: "mailto:davidwaligora@hotmail.com",
+      href: "mailto:davidwaligora1@hotmail.com",
     },
   },
 };

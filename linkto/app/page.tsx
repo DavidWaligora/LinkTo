@@ -1,8 +1,7 @@
 import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { Card } from "@heroui/card";
-import { Avatar } from "@heroui/avatar";
-
+import Image from "next/image";
 import {
   GithubIcon,
   LinkedInIcon,
@@ -18,22 +17,29 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center gap-4 pt-8">
       <EnterAnimation delay={0.1}>
         <Card className="p-3 sm:w-96 w-72">
-          <div className="flex justify-center mb-2">
-            <Avatar
-              alt="Image of David Waligora"
-              className="w-20 h-20"
-              src="davidwaligora.jpg"
-            />
+          <div className="grid grid-cols-3 gap-3">
+            <div className="col-span-1 h-full relative bg-default-100 rounded-xl overflow-hidden">
+              <Image
+                src="/IMG_3285.PNG"
+                alt="Image of David Waligora"
+                fill
+                className="object-cover"
+                style={{ top: "20%" }}
+                priority
+              />
+            </div>
+            <div className="col-span-2">
+              <span className={`${subtitle()}`}>
+                Hi! I&apos;m David Waligora.
+              </span>
+              <span className="text-default-600">
+                I am a software developer specialized in front-end and back-end
+                development. The following links will take you to my profiles and
+                website where you can find more information about my work and
+                projects.
+              </span>
+            </div>
           </div>
-          <span className={`${subtitle()} text-center`}>
-            Hi! I&apos;m David Waligora.
-          </span>
-          <span className="text-default-600">
-            I am a software developer specialized in front-end and back-end
-            development. The following links will take you to my profiles and
-            website where you can find more information about my work and
-            projects.
-          </span>
         </Card>
       </EnterAnimation>
 

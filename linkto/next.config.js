@@ -5,6 +5,9 @@ const nextConfig = {
   basePath: process.env.GITHUB_PAGES === 'true' 
     ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1]}`  // repo name as base path
     : '',
+    images: {
+      unoptimized: true,       // disable image optimization for static export
+    },
 };
 
 module.exports = nextConfig;
