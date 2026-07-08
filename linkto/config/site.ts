@@ -15,7 +15,7 @@ export const siteConfig = {
     },
     website: {
       title: "Website",
-      href: "https://davidwaligora.com",
+      href: "https://waligoo.be",
     },
     mail: {
       title: "Mail",
