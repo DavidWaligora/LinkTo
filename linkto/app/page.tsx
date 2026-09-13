@@ -33,8 +33,7 @@ export default function Home() {
                 Hi! I&apos;m David Waligora.
               </span>
               <span className="text-default-600">
-                I am a software developer specialized in front-end and back-end
-                development. The following links will take you to my profiles and
+                I am a software developer specialized in application development. The following links will take you to my profiles and
                 website where you can find more information about my work and
                 projects.
               </span>
